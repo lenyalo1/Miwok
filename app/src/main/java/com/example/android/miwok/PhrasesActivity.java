@@ -17,12 +17,37 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.word_list);
+
+
+        //creating an array of words
+        ArrayList<word> words = new ArrayList<word>();
+        words.add(new word("where are you going", "minto wuksus"));
+        words.add(new word("what is your name", "tinna oyaase'na"));
+        words.add(new word("my name is.....", "oyaaset"));
+        words.add(new word("How ae you feeling?", "michaksas?"));
+        words.add(new word("I'm feeling good", "kuchi achit"));
+        words.add(new word("Are you coming?", "aanas aa?"));
+        words.add(new word("Yes,I'm coming.", "aana"));
+        words.add(new word("Lets go.", "yoowutis"));
+        words.add(new word("Come here.", "anni nem"));
+        //create an {@link ArrayAdapter}
+        WordAdapter adapter=new WordAdapter(this,words, R.color.category_phrases);
+
+        //find the {@link ListView} objects in the view hierachy of the {@link Activity}
+        ListView listView=(ListView)findViewById(R.id.rootViewiew);
+
+        //make the {@link ListView } use the {@link ArrayAdapter}
+        listView.setAdapter(adapter);
+
     }
 }

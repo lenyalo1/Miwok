@@ -15,12 +15,40 @@ import android.os.Bundle;
 
         /** Miwok translation for the word */
 
-        private String MiwokTranslation;
+        private String mMiwokTranslation;
+
+        /** imageResourceId for the word*/
+        private int mImageResourceID =NO_IMAGE_PROVIDED;
+        private  static final int NO_IMAGE_PROVIDED =-1;
+
+        /**
+         *
+         * @param DefaultTranslation is the word in a language
+         * @param miwokTranslation is the word in the miwok language
+         *
+         */
 
         public  word(String DefaultTranslation,String miwokTranslation){
-            MiwokTranslation=miwokTranslation;
-             mDefaultTranslation=DefaultTranslation;
+           mDefaultTranslation=DefaultTranslation;
+            mMiwokTranslation=miwokTranslation;
+
     }
+        /**
+         *
+         * @param DefaultTranslation is the word in a language
+         * @param miwokTranslation is the word in the miwok language
+         *@param  imageResourceId is the drawable resource Id for the image associated with the word
+         *
+         */
+
+        public  word(String DefaultTranslation,String miwokTranslation,int imageResourceId){
+            mDefaultTranslation=DefaultTranslation;
+            mMiwokTranslation=miwokTranslation;
+            mImageResourceID=imageResourceId;
+
+        }
+
+
         /**
          *Get the default translation of the word.
          */
@@ -31,6 +59,21 @@ import android.os.Bundle;
          * Get the miwok translation of the word
          */
         public String getMiwokTranslation(){
-            return MiwokTranslation;
+            return mMiwokTranslation;
         }
-     }
+
+        /**
+         * get the ImageResourceId  of the word
+         */
+        public   int getImageresourceId (){
+           return mImageResourceID;
+        }
+
+        /** Return whether or not there is an image for this word.
+         */
+        public  boolean hasImage(){
+            return mImageResourceID!=NO_IMAGE_PROVIDED;
+
+        }
+
+    }
