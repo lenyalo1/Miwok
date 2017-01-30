@@ -48,7 +48,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".word" />
-        <activity android:name=".WordAdapter"></activity>
+        <activity android:name=".WordAdapter" />
     </application>
 
 </manifest>

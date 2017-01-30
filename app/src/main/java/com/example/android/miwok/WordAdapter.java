@@ -46,7 +46,7 @@ public class WordAdapter extends ArrayAdapter<word>{
         //return the whole list item layout (containing 2TextViews) so that it can beshown in the listView.
 
         // Find the ImageView in the list_item.xml layout with the ID image.
-        ImageView imageView=(ImageView) listItemView.findViewById(R.id.Image);
+        ImageView imageView=(ImageView) listItemView.findViewById(R.id.image);
 
         if (currentWord.hasImage()){
             //Set the imageView to the iage resource specified in the current word
@@ -59,7 +59,7 @@ public class WordAdapter extends ArrayAdapter<word>{
            imageView.setVisibility(View.GONE);
         }
         //Set the theme color for the list item
-        View textContainer=listItemView.findViewById(R.id.text_content);
+        View textContainer=listItemView.findViewById(R.id.text_container);
         //find the color that the resource ID maps to
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         //Set the background color of the text container View

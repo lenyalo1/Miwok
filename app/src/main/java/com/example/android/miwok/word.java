@@ -20,6 +20,7 @@ import android.os.Bundle;
         /** imageResourceId for the word*/
         private int mImageResourceID =NO_IMAGE_PROVIDED;
         private  static final int NO_IMAGE_PROVIDED =-1;
+        private int mAudioResourceID;
 
         /**
          *
@@ -28,9 +29,10 @@ import android.os.Bundle;
          *
          */
 
-        public  word(String DefaultTranslation,String miwokTranslation){
+        public  word(String DefaultTranslation,String miwokTranslation,int audioResourceID){
            mDefaultTranslation=DefaultTranslation;
             mMiwokTranslation=miwokTranslation;
+            mAudioResourceID=audioResourceID;
 
     }
         /**
@@ -41,10 +43,11 @@ import android.os.Bundle;
          *
          */
 
-        public  word(String DefaultTranslation,String miwokTranslation,int imageResourceId){
+        public  word(String DefaultTranslation,String miwokTranslation,int imageResourceId, int audioResourceID){
             mDefaultTranslation=DefaultTranslation;
             mMiwokTranslation=miwokTranslation;
             mImageResourceID=imageResourceId;
+            mAudioResourceID=audioResourceID;
 
         }
 
@@ -74,6 +77,11 @@ import android.os.Bundle;
         public  boolean hasImage(){
             return mImageResourceID!=NO_IMAGE_PROVIDED;
 
-        }
 
+        }
+        // Return the audio resource ID of the word
+        public int getAudioResourceId()
+        {
+            return mAudioResourceID;
+        }
     }
